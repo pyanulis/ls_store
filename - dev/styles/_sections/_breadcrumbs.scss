@@ -1,0 +1,34 @@
+.breadcrumps__item{
+  @include inlineblock(middle);
+  font-size: 14px;
+
+  &:before{
+    content: ">";
+    @include inlineblock(middle);
+  }
+
+  &:first-child{
+      &:before{
+        display: none;
+    }
+  }
+
+  &.breadcrumps__item_active{
+    .breadcrumps__link{
+      color: $orange;
+      text-decoration: underline;
+    }
+  }
+}
+
+.breadcrumbs__list{
+  margin-bottom: 21px;
+}
+
+.breadcrumps__link{
+  color: $black;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  @include inlineblock(middle);
+}

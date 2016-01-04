@@ -1,0 +1,7 @@
+.breadcrumbs
+    .container
+        ul.breadcrumbs__list
+            - var items=["Главная","Каталог"]
+            each item in items
+                li(class="breadcrumps__item breadcrumps__item_"+((item == "Каталог"?"active":"")))
+                    a(href="#").breadcrumps__link=item

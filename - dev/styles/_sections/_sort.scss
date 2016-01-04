@@ -1,0 +1,81 @@
+.sort{
+  background: #e4ebee;
+  @include clearfix;
+  @include border();
+  @include border-radius(5px);
+  margin-bottom: 21px;
+}
+
+.sort__title{
+  @include fontsize;
+  color: #5d656c;
+  @include inlineblock(middle);
+  margin-right: 11px;
+}
+
+.sort__select{
+  @include inlineblock(middle);
+}
+
+.sort__select-wrap{
+  padding-left: 20px;
+  padding-top: 11px;
+}
+
+.sort__left{
+  @include float-left();
+}
+
+.sort__right{
+  @include float-right();
+  text-align: right;
+}
+
+.sort__view{
+  @include inlineblock(middle);
+}
+
+.sort__view-list{
+  @include clearfix;
+}
+
+.sort__view-item{
+  float: left;
+  @include border();
+}
+
+.sort__view-link{
+  @include size-square(50px);
+  position: relative;
+  display: block;
+  outline: none !important;
+}
+
+.sort__view-icon{
+  @include absolute-center
+}
+
+$views-map: sprite-map("icons/views/*.png", $spacing: 70px);
+$views: rows, grid, lines;
+
+@each $view in $views {
+  .sort__views_#{$view} {
+    .sort__view-icon {
+      @include get-sprite($views-map, $view);
+    }
+
+    &:hover {
+      .sort__view-icon {
+        $icon-name: $view+"-hover";
+        @include get-sprite($views-map, $icon-name);
+      }
+    }
+
+    &:active{
+      .sort__view-icon {
+        $icon-name: $view+"-hover";
+        @include get-sprite($views-map, $icon-name);
+      }
+    }
+  }
+}
