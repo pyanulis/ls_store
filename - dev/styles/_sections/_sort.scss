@@ -59,7 +59,8 @@ $views-map: sprite-map("icons/views/*.png", $spacing: 70px);
 $views: rows, grid, lines;
 
 @each $view in $views {
-  .sort__views_#{$view} {
+
+  .sort__view-#{$view} {
     .sort__view-icon {
       @include get-sprite($views-map, $view);
     }
@@ -71,7 +72,7 @@ $views: rows, grid, lines;
       }
     }
 
-    &:active{
+    &.active{
       .sort__view-icon {
         $icon-name: $view+"-hover";
         @include get-sprite($views-map, $icon-name);

@@ -35,9 +35,14 @@ $socials: fb, vk, tw;
 $socials-map: sprite-map("icons/socials/*.png", $spacing: 70px);
 
 @each $social in $socials{
-  .socials__item_#{social}{
+  .socials__item_#{$social}{
     .socials__icon{
       @include get-sprite($socials-map, $social);
+
+      &:hover{
+          $hover-name: $social + "-hover";
+          @include get-sprite($socials-map, $hover-name);
+      }
     }
   }
 }

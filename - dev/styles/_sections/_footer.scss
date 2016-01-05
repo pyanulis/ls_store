@@ -28,33 +28,34 @@
 $socials-dark-map: sprite-map("icons/socials_dark/*.png", $spacing: 70px);
 $socials-dark: fb, vk, tw;
 
-.footer__socials{
+.footer__right{
   margin-bottom: 21px;
 
-  .socials__link{
-    width: 45px;
-    height: 45px;
+  .socials__link {
+    width: 43px;
+    height: 43px;
     background: $white;
     display: block;
+  }
 
-    .socials__item{
-      margin-left: 26px;
-    }
+  .socials__item{
+    margin-left: 26px;
+  }
 
-    @each $item in $socials-dark{
-      .socials__item_#{$item}{
-        .socials__link{
+  @each $item in $socials-dark{
+    .socials__item_#{$item}{
+      .socials__link{
+        &:after{
+          content: " ";
+          @include get-sprite($socials-dark-map, $item);
+          @include absolute-center;
+        }
+
+        &:hover{
           &:after{
-            @include get-sprite($socials-dark-map, $item);
-            content: "";
-            @include absolute-center;
-          }
-
-          &:hover{
-            &:after{
-              $hover-name: $item + "-hover";
-              @include get-sprite($socials-dark-map, $hover-name);
-            }
+            content: " ";
+            $hover-name: $item + "-hover";
+            @include get-sprite($socials-dark-map, $hover-name);
           }
         }
       }

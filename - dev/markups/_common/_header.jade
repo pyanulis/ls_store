@@ -4,9 +4,9 @@ header.header
             .header__left
                 - var icons = {"fb":"http://facebook.com", "vk":"http://vk.com", "tw":"http://twitter.com"}
                 ul.socials
-                    each icon in icons
-                        li(class="socials__item socials__item_" + icons[icon])
-                            a(href="#{icon}").socials__link
+                    each value,key in icons
+                        li(class="socials__item socials__item_" + key)
+                            a(href="#{value}").socials__link
                                 .socials__icon
             .header__right
                 .address ул. Маяковского 6, офис 17

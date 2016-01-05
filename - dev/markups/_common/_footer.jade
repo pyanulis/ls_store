@@ -8,9 +8,9 @@ footer.footer
 			.footer__right
 				- var icons = {"fb":"http://facebook.com", "vk":"http://vk.com", "tw":"http://twitter.com"}
 				ul.socials.footer__socials
-					each icon in icons
-						li(class="socials__item socials__item_" + icons[icon])
-							a(href="#{icon}").socials__link
+					each value,key in icons
+						li(class="socials__item socials__item_" + key)
+							a(href="#{value}").socials__link
 				ul.footer__nav
 					- var items=["Планшеты","Мобильные телефоны","Mp3 плееры","Персональные компьютеры","Аксессуары","Бытовая техника"]
 					each item in items

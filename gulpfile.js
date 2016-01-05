@@ -34,6 +34,7 @@ var
 		},
 
 		js : {
+			dir    : '- dev/scripts/**/*.js',
 			location    : '- dev/scripts/main.js',
 			plugins     : '- dev/scripts/_plugins/*.js',
 			destination : 'js'
@@ -100,10 +101,10 @@ gulp.task('plugins', function() {
 /* --------- plugins --------- */
 
 gulp.task('scripts', function() {
-	return gulp.src(paths.js.location)
+	return gulp.src(paths.js.dir)
 		.pipe(plumber())
 		.pipe(uglify())
-		.pipe(rename('main.min.js'))
+		.pipe(concat('main.min.js'))
 		.pipe(gulp.dest(paths.js.destination));
 });
 
@@ -112,7 +113,7 @@ gulp.task('scripts', function() {
 gulp.task('watch', function(){
 	gulp.watch(paths.jade.location, ['jade']);
 	gulp.watch(paths.scss.location, ['compass']);
-	gulp.watch(paths.js.location, ['scripts']);
+	gulp.watch(paths.js.dir, ['scripts']);
 	gulp.watch(paths.js.plugins, ['plugins']);
 	gulp.watch(paths.browserSync.watchPaths).on('change', browserSync.reload);
 });

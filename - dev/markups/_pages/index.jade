@@ -27,10 +27,10 @@ block content
 							.sort__title
 								| Вид каталога
 							.sort__view
-								ul.sort_-view-list
+								ul.sort_view-list
 									- var items = ["rows","grid","lines"]
 									each item in items
-										li(class="sort__view-item sort__view-"+item data-view=item)
+										li(class="sort__view-item sort__view-"+item+((item=="rows")?" active":"") data-view=item)
 											a(href="#").sort__view-link
 												.sort__view-icon
 					.products
@@ -401,7 +401,7 @@ block content
 									a(href="#").pagination__link
 										.pagination__mark
 								- each i in [1,2,3,4]
-									li.pagination__item.pagination__item-prev
+									li.pagination__item
 										a(href="#").pagination__link
 											.pagination__mark=i
 

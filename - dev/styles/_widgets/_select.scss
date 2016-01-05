@@ -6,6 +6,7 @@
   }
 
   .select2-selection__arrow{
+    background: none;
     b{
       @include get-sprite($misc-sprite, select-to-bottom);
       width: 13px !important;

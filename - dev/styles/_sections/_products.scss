@@ -123,7 +123,7 @@
 }
 
 .products__desc-title{
-  @include fontsize(16px, 18px);
+  @include fontsize(14px, 20px);
   @include open-sans(semibold);
   color: #010101;
   margin-bottom: 20px;
@@ -224,6 +224,7 @@ $stars-map: sprite-map("icons/stars/*.png", $spacing: 70px);
   color: #7f7f7f;
 
   &:before{
+    content: "";
     @include size-square(7px);
     @include border-radius(50%);
     background-color: #60ac49;
