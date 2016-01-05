@@ -72,10 +72,8 @@
 
   &.active{
     .filter-title{
-
       &:after{
-        content: "";
-        @include get-sprite($misc-sprite, select-to-top);
+        @include get-sprite($misc-sprite, select-to-top-bold);
       }
     }
   }
@@ -142,6 +140,7 @@
   @include inlineblock(top);
   font-size: 14px;
   line-height: 16px;
+  @include open-sans(regular);
   color: $black;
   min-width: 240px;
   margin-left: 8px;

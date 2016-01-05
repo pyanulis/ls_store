@@ -6,12 +6,11 @@
   }
 
   .select2-selection__arrow{
-    background: none;
     b{
       @include get-sprite($misc-sprite, select-to-bottom);
       width: 13px !important;
       height: 9px !important;
-      border: 0 none;
+      border: 0 none !important;
       margin: auto !important;
       top: 0 !important;
       left: 0 !important;
@@ -20,9 +19,9 @@
     }
   }
 
-  .select2-container--open{
+  &.select2-container--open{
     b{
-      @include get-sprite($misc-sprite, select-to-top);
+      @include get-sprite($misc-sprite, select-to-top-bold);
     }
   }
 
@@ -34,7 +33,7 @@
 
   .select2-dropdown{
     margin-top: 2px;
-    bottom: 0 none;
+    border: 0 none;
     @include box-shadow(0 0 5px 0 rgba(134, 134, 134, .75));
     @include border-radius(5px);
     background-color: $white;

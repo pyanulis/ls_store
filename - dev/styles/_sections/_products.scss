@@ -103,7 +103,7 @@
 
 .products__article-word{
   @include inlineblock(middle);
-  @include fontsize(12px 16px);
+  @include fontsize(12px, 16px);
   color: #7f7f7f;
   @include open-sans(bold);
 }
