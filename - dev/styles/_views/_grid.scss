@@ -57,11 +57,16 @@
   }
 
   .products__desc-options{
+    display: block;
     margin-bottom: 3px;
   }
 
   .products-rating{
     margin-bottom: 10px;
+  }
+
+  .products__price{
+    margin-top: 14px;
   }
 
   .products__info{
@@ -114,12 +119,14 @@
     display: block;
     @include float-left(67%);
     text-align: left;
+    background-color: inherit;
   }
 
   .products__option-value{
     display: block;
     @include float-right(33%);
     text-align: right;
+    background-color: inherit;
   }
 
   .products__option-item-colored{

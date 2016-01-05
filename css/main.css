@@ -4467,10 +4467,14 @@ body .ui-tooltip {
   display: none;
 }
 .products__list_grid .products__desc-options {
+  display: block;
   margin-bottom: 3px;
 }
 .products__list_grid .products-rating {
   margin-bottom: 10px;
+}
+.products__list_grid .products__price {
+  margin-top: 14px;
 }
 .products__list_grid .products__info {
   border: 0 none;
@@ -4530,12 +4534,14 @@ body .ui-tooltip {
   float: left;
   width: 67%;
   text-align: left;
+  background-color: inherit;
 }
 .products__list_grid .products__option-value {
   display: block;
   float: right;
   width: 33%;
   text-align: right;
+  background-color: inherit;
 }
 .products__list_grid .products__option-item-colored {
   background-color: #e6e6e6;
